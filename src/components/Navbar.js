@@ -1,14 +1,16 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark  bg-primary">
-        <div className="container-fluid ">
-          <a className="navbar-brand" href={() => false}>
-            {" "}
-            eCIFM Solution Inc.{""}
-          </a>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div className="container-fluid">
+          <Link to="/" className="navbar-brand">
+            eCIFM Solution Inc.
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,18 +25,9 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a
-                  className="nav-link active"
-                  aria-current="page"
-                  href={() => false}
-                >
+                <Link to="/" className="nav-link active" aria-current="page">
                   Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href={() => false}>
-                  Link
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -44,12 +37,12 @@ const Navbar = () => {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Options
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href={() => false}>
-                      Action
+                    <a className="dropdown-item" href={() => false} onClick={() => navigate("/LoginData")}>
+                      Login dashboard
                     </a>
                   </li>
                   <li>
@@ -66,11 +59,6 @@ const Navbar = () => {
                     </a>
                   </li>
                 </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" href={() => false}>
-                  Disabled
-                </a>
               </li>
             </ul>
             <form className="d-flex" role="search">
