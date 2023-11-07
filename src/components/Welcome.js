@@ -1,9 +1,11 @@
 import React from 'react'
+import NavigationBar from './NavigationBar';
 
 const Welcome = () => {
   return (
     <>
-      <div style={{ margin: "20rem" }} > Welcome...  </div>
+    <NavigationBar/>
+      <div style={{ margin: "20rem" }} ><h1>Welcome...</h1>   </div>
     </>
   )
 }

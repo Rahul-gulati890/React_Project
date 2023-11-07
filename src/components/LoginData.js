@@ -2,13 +2,15 @@ import React from 'react'
 import { Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Data from './Data';
+import NavigationBar from './NavigationBar';
 
 
 const LoginData = () => {
   return (
     <>
+    <NavigationBar/>
       <div style={{ margin: "1rem" }} >
-        <Table striped bordered hover size="sm" className="table-secondary">
+        <Table striped bordered hover size="sm" className="table-success">
           <thead>
             <tr>
               <th>

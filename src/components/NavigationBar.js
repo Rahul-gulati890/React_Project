@@ -1,19 +1,26 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
-  const navigate = useNavigate();
+const NavigationBar = () => {
+
+    const Navigate = useNavigate();
+    function goToLoginData () {
+        Navigate("/login");
+    }
+    function goToHome () {
+        Navigate("/");
+    }
+     
 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
-          <Link to="/" className="navbar-brand">
-            eCIFM Solution Inc.
-          </Link>
+          <label className="btn btn-primary disabled">
+            OTG Server Maintenance
+          </label>
           <button
             className="navbar-toggler"
-            type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
@@ -25,40 +32,41 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/" className="nav-link active" aria-current="page">
+                <button
+                  className="nav-link active" onClick={goToHome}
+                >
                   Home
-                </Link>
+                </button>
+              </li>
+              <li className="nav-item">
+                <button className="nav-link">
+                  Link
+                </button>
               </li>
               <li className="nav-item dropdown">
-                <a
+                <button
                   className="nav-link dropdown-toggle"
-                  href={() => false}
-                  role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
                 >
-                  Options
-                </a>
+                  Dropdown
+                </button>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href={() => false} onClick={() => navigate("/LoginData")}>
-                      Login dashboard
-                    </a>
+                    <button className="dropdown-item"  onClick={goToLoginData}>
+                      Client Details
+                      </button>
                   </li>
                   <li>
-                    <a className="dropdown-item" href={() => false}>
+                    <button className="dropdown-item">
                       Another action
-                    </a>
+                    </button>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
-                  <li>
-                    <a className="dropdown-item" href={() => false}>
-                      Something else here
-                    </a>
-                  </li>
                 </ul>
+              </li>
+              <li className="nav-item">
               </li>
             </ul>
             <form className="d-flex" role="search">
@@ -68,7 +76,7 @@ const Navbar = () => {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-success" type="submit">
+              <button className="btn btn-secondary" type="submit">
                 Search
               </button>
             </form>
@@ -79,4 +87,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavigationBar;
